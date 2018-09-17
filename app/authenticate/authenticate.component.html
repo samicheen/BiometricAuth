@@ -1,0 +1,18 @@
+<ActionBar class="action-bar">
+    <NavigationButton visibility="collapsed"></NavigationButton>
+    <Label class="action-bar-title" text="Authenticate"></Label>
+</ActionBar>
+<GridLayout class="page" columns="*, *" rows="auto,auto" verticalAlignment="center">
+    <StackLayout row="0" col="0">
+        <Image src="~/assets/images/user.png" (tap)="login()" horizontalAlignment="center" class="user"></Image>
+        <Label text="Password" horizontalAlignment="center"></Label>
+    </StackLayout>
+    <StackLayout row="0" col="1" *sdkUnless="isFace">
+        <Image src="~/assets/images/face_id.png" (tap)="biometric()" horizontalAlignment="center" class="biometric"></Image>
+        <Label text="Face ID" horizontalAlignment="center"></Label>
+    </StackLayout>
+    <StackLayout row="0" col="1" *sdkUnless="isTouch">
+        <Image src="~/assets/images/touch_id.png" (tap)="biometric()" horizontalAlignment="center" class="biometric"></Image>
+        <Label text="Touch ID" horizontalAlignment="center"></Label>
+    </StackLayout>
+</GridLayout>
