@@ -3,16 +3,16 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { AuthenticateRoutingModule } from "./authenticate-routing.module";
 import { AuthenticateComponent } from "./authenticate.component";
-import { UnlessDirective } from "~/directives/unless-directive";
+import { UnlessModule } from "~/directives/unless.module";
 
 @NgModule({
     imports: [
         NativeScriptCommonModule,
-        AuthenticateRoutingModule
+        AuthenticateRoutingModule,
+        UnlessModule
     ],
     declarations: [
-        AuthenticateComponent,
-        UnlessDirective
+        AuthenticateComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

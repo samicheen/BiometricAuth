@@ -3,6 +3,11 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout class="page" verticalAlignment="bottom">
-    <Button class="btn btn-primary w-full" text="Logout" (tap)="logout()"></Button>
+<GridLayout class="page" >
+        <Label text="Welcome {{username}}" verticalAlignment="top"></Label>
+        <StackLayout orientation="horizontal" *sdkUnless="result.any">
+            <Label class="h3 m-15" [text]="result.touch? 'Touch ID' : 'Face ID'" textWrap="true" row="0" col="0"></Label>
+            <Switch class="m-15" checked="{{useBiometric}}" (checkedChange)="onToggle($event)" row="0" col="1"></Switch>
+        </StackLayout>
+        <Button class="btn btn-primary w-full" text="Logout" (tap)="logout()" verticalAlignment="bottom"></Button>
 </GridLayout>

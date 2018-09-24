@@ -5,7 +5,8 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "~/register/register.component";
-import { NativeScriptFormsModule } from "nativescript-angular/forms"
+import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { BiometricService } from "./services/BiometricService";
 
 @NgModule({
     bootstrap: [
@@ -20,6 +21,9 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms"
         AppComponent,
         LoginComponent,
         RegisterComponent
+    ],
+    providers: [
+        BiometricService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

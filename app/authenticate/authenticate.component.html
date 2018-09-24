@@ -7,11 +7,11 @@
         <Image src="~/assets/images/user.png" (tap)="login()" horizontalAlignment="center" class="user"></Image>
         <Label text="Password" horizontalAlignment="center"></Label>
     </StackLayout>
-    <StackLayout row="0" col="1" *sdkUnless="isFace">
+    <StackLayout row="0" col="1" *sdkUnless="result.face">
         <Image src="~/assets/images/face_id.png" (tap)="biometric()" horizontalAlignment="center" class="biometric"></Image>
         <Label text="Face ID" horizontalAlignment="center"></Label>
     </StackLayout>
-    <StackLayout row="0" col="1" *sdkUnless="isTouch">
+    <StackLayout row="0" col="1" *sdkUnless="result.touch">
         <Image src="~/assets/images/touch_id.png" (tap)="biometric()" horizontalAlignment="center" class="biometric"></Image>
         <Label text="Touch ID" horizontalAlignment="center"></Label>
     </StackLayout>
